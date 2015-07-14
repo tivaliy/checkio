@@ -2,12 +2,13 @@ __author__ = 'machin'
 
 
 def checkio(game_result):
+    # Create matrix of characters
     game_grid = [[i for i in range(len(game_result))] for i in range(len(game_result))]
     for i, line in enumerate(game_result):
         for j, char in enumerate(line):
             game_grid[i][j] = char
-    print(game_grid)
     array = []
+    # Get all columns and rows from grid_matrix
     for j in range(len(game_grid)):
         m = ''
         k = ''
