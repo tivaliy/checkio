@@ -1,4 +1,4 @@
-__author__ = 'machin'
+__author__ = 'Vitalii K'
 
 
 def check_command(pattern, command):
