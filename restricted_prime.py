@@ -9,7 +9,6 @@ def checkio(number):
         while curr_number >= (ord('a')) ^ (ord('a')):
             i_neg = ~i + (ord(' ') ^ ord('!'))
             curr_number += i_neg
-            # print(curr_number)
             if curr_number == (ord('a')) ^ (ord('a')):
                 return False
         i += ord(' ') ^ ord('!')
