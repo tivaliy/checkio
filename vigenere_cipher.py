@@ -15,18 +15,17 @@ def decode_vigenere(old_decrypted, old_encrypted, new_encrypted):
 
 # Generate Vigenère square
 def gen_vigenere_table():
-    l = list(ALPHABET)
-    l = collections.deque(l)
-    d = {}
+    l = collections.deque(list(ALPHABET))
+    vigenere_dict = {}
     cnt = 0
-    for i, p in enumerate(itertools.product(ALPHABET, repeat=2)):
-        d[''.join(p)] = l[cnt]
+    for p in itertools.product(ALPHABET, repeat=2):
+        vigenere_dict[''.join(p)] = l[cnt]
         if cnt == len(ALPHABET) - 1:
             cnt = 0
             l.rotate(-1)
         else:
             cnt += 1
-    return d
+    return vigenere_dict
 
 
 # Get secret key from old_decrypted and old_encrypted
