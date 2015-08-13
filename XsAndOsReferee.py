@@ -1,26 +1,26 @@
 __author__ = 'Vitalii K'
 
 
-def checkio(game_result):
+def checkio(result):
     # Create matrix of characters
-    game_grid = [[i for i in range(len(game_result))] for i in range(len(game_result))]
-    for i, line in enumerate(game_result):
+    grid = [[i for i in range(len(result))] for i in range(len(result))]
+    for i, line in enumerate(result):
         for j, char in enumerate(line):
-            game_grid[i][j] = char
+            grid[i][j] = char
     array = []
     # Get all columns and rows from grid_matrix
-    for j in range(len(game_grid)):
+    for j in range(len(grid)):
         m = ''
         k = ''
-        for i in range(len(game_grid)):
-            m += game_grid[i][j]
-            k += game_grid[j][i]
+        for i in range(len(grid)):
+            m += grid[i][j]
+            k += grid[j][i]
         array.append(m)
         array.append(k)
     # Add main diagonals
-    l = len(game_grid[0])
-    array.append(''.join([str(game_grid[i][i]) for i in range(l)]))
-    array.append(''.join([str(game_grid[l-1-i][i]) for i in range(l-1, -1, -1)]))
+    l = len(grid[0])
+    array.append(''.join([str(grid[i][i]) for i in range(l)]))
+    array.append(''.join([str(grid[l-1-i][i]) for i in range(l-1, -1, -1)]))
     for index in array:
         if index == 'XXX':
             return 'X'
