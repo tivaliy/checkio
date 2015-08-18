@@ -15,8 +15,6 @@ def checkio(a, b, c):
     gamma = round(degrees(acos((a**2 + b**2 - c**2) / (2*a*b))))
     return sorted([alpha, betta, gamma])
 
-print(checkio(10, 20, 30))
-
 # These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
     assert checkio(4, 4, 4) == [60, 60, 60], "All sides are equal"
