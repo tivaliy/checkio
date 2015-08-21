@@ -4,14 +4,13 @@ __author__ = 'Vitalii K'
 
 def digit_stack(commands):
     summary, stack = 0, []
-    cmd_list = [x.split() for x in commands]
-    for cmd_index in range(len(cmd_list)):
-        if cmd_list[cmd_index][0] == 'PUSH':
-            stack.append(int(cmd_list[cmd_index][1]))
-        elif cmd_list[cmd_index][0] == 'POP':
-            summary += stack.pop() if len(stack) else 0
+    for c in commands:
+        if 'PUSH' in c:
+            stack.append(int(c.split()[1]))
+        elif 'POP' in c:
+            summary += stack.pop() if stack else 0
         else:
-            summary += stack[-1] if len(stack) else 0
+            summary += stack[-1] if stack else 0
     return summary
 
 if __name__ == '__main__':
