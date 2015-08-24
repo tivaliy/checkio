@@ -5,9 +5,8 @@ __author__ = 'Vitalii K'
 def safe_pawns(pawns):
     safe_pawns_cnt = 0
     for coord in pawns:
-        c_list = list(coord)
-        first_check = (chr(ord(c_list[0]) - 1) + str((int(c_list[1]) - 1)))
-        second_check = (chr(ord(c_list[0]) + 1) + str((int(c_list[1]) - 1)))
+        first_check = (chr(ord(coord[0]) - 1) + str((int(coord[1]) - 1)))
+        second_check = (chr(ord(coord[0]) + 1) + str((int(coord[1]) - 1)))
         if first_check in pawns or second_check in pawns:
             safe_pawns_cnt += 1
     return safe_pawns_cnt
