@@ -1,7 +1,6 @@
 def checkio(numbers):
     jump_one, jump_two = 0, 0
     for n in numbers:
-        print(jump_two, jump_one)
         jump_two, jump_one = jump_one, max(jump_one, jump_two) + n
     return max(jump_one, jump_two)
 
