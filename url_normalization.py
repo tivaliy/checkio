@@ -16,7 +16,8 @@ def checkio(url):
     url = re.sub(r'\/(\.\/)+', '/', url)    # '/./././' --> '/'
     url = re.sub(r'%[\w].', lambda pat: pat.group().upper(), url)
     url = re.sub(r'%[\w].', decode_percent_encoded, url)
-    url = re.sub(r'\/[\w]*\/(\.\.)', '', url)
+    while '..' in url:
+        url = re.sub(r'\/[\w]*\/(\.\.)', '', url)
     return url
 
 #These "asserts" using only for self-checking and not necessary for auto-testing
